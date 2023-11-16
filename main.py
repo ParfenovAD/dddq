@@ -1,7 +1,7 @@
 import re
 import datetime
 import asyncio
-from aiogram import Bot, types, Dispatcher, Executor
+from aiogram import Bot, types, Dispatcher
 
 API_TOKEN = '123456789:AAG3xQ34X7m6XIa7Mc8ETU9_1iobqdRIXIU'
 
@@ -146,4 +146,4 @@ async def check_birthday_messages():
 
 if __name__ == '__main__':
     task = asyncio.ensure_future(check_birthday_messages())
-    Executor(dp).start_polling(skip_updates=True, on_shutdown=task.cancel)
+    dp.start_polling(skip_updates=True, on_shutdown=task.cancel)
